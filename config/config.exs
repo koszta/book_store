@@ -6,16 +6,14 @@
 use Mix.Config
 
 # General application configuration
-config :book_store,
-  ecto_repos: [BookStore.Repo]
+config :book_store, ecto_repos: [BookStore.Repo]
 
 # Configures the endpoint
 config :book_store, BookStoreWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "XwnpTo0QcTVn4PWpBJ5vJ95CAg8ypEZ0z12EAykln8NPRy9nUwGrhN1Pn7WOGdbm",
   render_errors: [view: BookStoreWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: BookStore.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: BookStore.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,4 +22,4 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"

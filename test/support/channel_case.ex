@@ -25,13 +25,13 @@ defmodule BookStoreWeb.ChannelCase do
     end
   end
 
-
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(BookStore.Repo)
+
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(BookStore.Repo, {:shared, self()})
     end
+
     :ok
   end
-
 end

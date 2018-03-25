@@ -11,7 +11,7 @@ defmodule BookStore.Application do
       # Start the Ecto repository
       supervisor(BookStore.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(BookStoreWeb.Endpoint, []),
+      supervisor(BookStoreWeb.Endpoint, [])
       # Start your own worker by calling: BookStore.Worker.start_link(arg1, arg2, arg3)
       # worker(BookStore.Worker, [arg1, arg2, arg3]),
     ]
