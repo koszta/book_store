@@ -8,4 +8,13 @@ defmodule BookStoreWeb.Router do
   scope "/api", BookStoreWeb do
     pipe_through(:api)
   end
+
+  forward("/graphql", Absinthe.Plug, schema: BookStoreWeb.Schema)
+
+  forward(
+    "/graphiql",
+    Absinthe.Plug.GraphiQL,
+    schema: BookStoreWeb.Schema,
+    interface: :playground
+  )
 end
