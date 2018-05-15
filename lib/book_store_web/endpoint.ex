@@ -43,6 +43,8 @@ defmodule BookStoreWeb.Endpoint do
     signing_salt: "dZl/lzNf"
   )
 
+  plug(CORSPlug)
+
   plug(BookStoreWeb.Router)
 
   @doc """
