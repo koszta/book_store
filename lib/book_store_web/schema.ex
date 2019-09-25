@@ -1,5 +1,6 @@
 defmodule BookStoreWeb.Schema do
   use Absinthe.Schema
+  alias BookStoreWeb.AuthorsResolver
   alias BookStoreWeb.BooksResolver
 
   import_types(Absinthe.Type.Custom)
@@ -13,7 +14,11 @@ defmodule BookStoreWeb.Schema do
   object :book do
     field(:id, :id)
     field(:title, :string)
-    field(:author, :author)
+
+    field(:author, :author) do
+      resolve(&AuthorsResolver.find/3)
+    end
+
     field(:description, :string)
     field(:pages, :integer)
     field(:price, :float)
