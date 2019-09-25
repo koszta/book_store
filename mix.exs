@@ -40,7 +40,8 @@ defmodule BookStore.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:absinthe_plug, "~> 1.4"},
-      {:cors_plug, "~> 1.5"}
+      {:cors_plug, "~> 1.5"},
+      {:dataloader, "~> 1.0.0"}
     ]
   end
 
