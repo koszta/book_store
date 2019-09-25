@@ -1,12 +1,14 @@
 defmodule BookStore.Authors.Author do
   use Ecto.Schema
   import Ecto.Changeset
-
+  alias BookStore.Books.Book
 
   schema "authors" do
-    field :date_of_birth, :date
-    field :first_name, :string
-    field :last_name, :string
+    field(:date_of_birth, :date)
+    field(:first_name, :string)
+    field(:last_name, :string)
+
+    has_many(:books, Book)
 
     timestamps()
   end
